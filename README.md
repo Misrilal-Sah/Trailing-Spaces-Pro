@@ -286,27 +286,6 @@ Trailing Spaces Pro is engineered to stay out of your way:
 
 ---
 
-## ❓ FAQ
-
-**Why are Markdown files excluded by default?**
-Markdown uses two trailing spaces as a hard line-break (`<br>`). Highlighting and trimming them would corrupt valid Markdown formatting. Remove `"markdown"` from `excludeLanguages` if you want to highlight them anyway.
-
-**Can I use a completely custom color?**
-Yes. Set `"trailingSpaces.colorPreset": "custom"` and then set any RGBA value in `highlightColor` and `borderColor`. Changes apply live without reloading VS Code.
-
-**Does it slow down VS Code on large files?**
-No. Text-change events are debounced at 300 ms and the `maxFileLines` setting (default 10,000) skips highlighting for very large files entirely. You can also lower `maxFileLines` for stricter performance control.
-
-**Can it automatically trim on save?**
-Yes — set `"trailingSpaces.trimOnSave": true`. Use the `⚡ Toggle Auto-Trim on Save` command from the palette to flip the setting without opening Settings UI.
-
-**Why doesn't it highlight the line I'm currently typing on?**
-By default `highlightCurrentLine` is `false`. This prevents the highlight from flickering as you type and delete characters. Set it to `true` if you prefer highlighting the cursor line as well.
-
-**Does it work with trailing tabs, not just spaces?**
-Yes. The extension uses the regex `[ \t]+$` which matches both trailing spaces and trailing tab characters.
-
----
 
 ## 📊 Comparison
 
@@ -370,7 +349,9 @@ MIT — see [LICENSE](LICENSE).
 
 <br/>
 
-**Made with 🩷 by [Misrilal Sah](https://misril.dev/)**
+<p align="center">
+  <img src="https://img.shields.io/badge/Made%20with%20%E2%9D%A4%EF%B8%8F%20for%20VS%20Code-007ACC?style=for-the-badge&labelColor=1e1e1e" alt="Made with love for VS Code" />
+</p>
 
 [![GitHub](https://img.shields.io/badge/GitHub-Misrilal--Sah-111111?style=flat-square&logo=github&labelColor=333)](https://github.com/Misrilal-Sah)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-misrilal--sah-111111?style=flat-square&logo=linkedin&labelColor=0077B5)](https://www.linkedin.com/in/misrilal-sah/)
