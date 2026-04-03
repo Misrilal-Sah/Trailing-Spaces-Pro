@@ -3,7 +3,7 @@
   "displayName": "Trailing Spaces Pro - Highlight & Clean",
   "description": "Beautiful real-time highlighting of trailing spaces and tabs with customizable neon colors, one-click cleanup, auto-trim on save, status bar counter, and language-specific rules. The prettiest way to keep your code clean.",
   "version": "1.0.0",
-  "publisher": "MisrilalSah",
+  "publisher": "Misrilal-Sah",
   "license": "MIT",
   "engines": {
     "vscode": "^1.75.0"
