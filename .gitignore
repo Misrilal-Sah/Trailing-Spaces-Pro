@@ -1,0 +1,11 @@
+out/
+node_modules/
+.vscode-test/
+.vscode/
+*.vsix
+.DS_Store
+.planning/
+proj3.txt
+run.md
+*.js
+*.js.map

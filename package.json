@@ -1,0 +1,283 @@
+{
+  "name": "trailing-spaces-pro",
+  "displayName": "Trailing Spaces Pro - Highlight & Clean",
+  "description": "Beautiful real-time highlighting of trailing spaces and tabs with customizable neon colors, one-click cleanup, auto-trim on save, status bar counter, and language-specific rules. The prettiest way to keep your code clean.",
+  "version": "1.0.0",
+  "publisher": "MisrilalSah",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": ["Formatters", "Linters", "Other"],
+  "keywords": [
+    "trailing spaces", "whitespace", "trim", "highlight",
+    "cleanup", "formatter", "linter", "clean code", "spaces", "tabs"
+  ],
+  "galleryBanner": {
+    "color": "#FF007F",
+    "theme": "dark"
+  },
+  "icon": "assets/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Misrilal-Sah/Trailing-Spaces-Pro"
+  },
+  "bugs": {
+    "url": "https://github.com/Misrilal-Sah/Trailing-Spaces-Pro/issues"
+  },
+  "homepage": "https://github.com/Misrilal-Sah/Trailing-Spaces-Pro#readme",
+  "main": "./out/extension.js",
+  "activationEvents": ["onStartupFinished"],
+  "contributes": {
+    "commands": [
+      {
+        "command": "trailing-spaces-pro.deleteAll",
+        "title": "🧹 Delete All Trailing Spaces",
+        "category": "Trailing Spaces"
+      },
+      {
+        "command": "trailing-spaces-pro.deleteInSelection",
+        "title": "🧹 Delete Trailing Spaces in Selection",
+        "category": "Trailing Spaces"
+      },
+      {
+        "command": "trailing-spaces-pro.deleteOnCurrentLine",
+        "title": "🧹 Delete Trailing Spaces on Current Line",
+        "category": "Trailing Spaces"
+      },
+      {
+        "command": "trailing-spaces-pro.toggleHighlight",
+        "title": "👁️ Toggle Trailing Spaces Highlighting",
+        "category": "Trailing Spaces"
+      },
+      {
+        "command": "trailing-spaces-pro.toggleAutoTrim",
+        "title": "⚡ Toggle Auto-Trim on Save",
+        "category": "Trailing Spaces"
+      },
+      {
+        "command": "trailing-spaces-pro.highlightAll",
+        "title": "🔍 Highlight All Trailing Spaces Now",
+        "category": "Trailing Spaces"
+      },
+      {
+        "command": "trailing-spaces-pro.jumpToNext",
+        "title": "⏭️ Jump to Next Trailing Space",
+        "category": "Trailing Spaces"
+      },
+      {
+        "command": "trailing-spaces-pro.jumpToPrevious",
+        "title": "⏮️ Jump to Previous Trailing Space",
+        "category": "Trailing Spaces"
+      }
+    ],
+    "submenus": [
+      {
+        "id": "trailing-spaces-pro.submenu",
+        "label": "🧹 Trailing Spaces"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "submenu": "trailing-spaces-pro.submenu",
+          "group": "1_modification@1"
+        }
+      ],
+      "trailing-spaces-pro.submenu": [
+        {
+          "command": "trailing-spaces-pro.deleteAll",
+          "group": "1_delete@1"
+        },
+        {
+          "command": "trailing-spaces-pro.deleteInSelection",
+          "group": "1_delete@2",
+          "when": "editorHasSelection"
+        },
+        {
+          "command": "trailing-spaces-pro.deleteOnCurrentLine",
+          "group": "1_delete@3"
+        },
+        {
+          "command": "trailing-spaces-pro.jumpToNext",
+          "group": "2_navigate@1"
+        },
+        {
+          "command": "trailing-spaces-pro.jumpToPrevious",
+          "group": "2_navigate@2"
+        },
+        {
+          "command": "trailing-spaces-pro.toggleHighlight",
+          "group": "3_toggle@1"
+        },
+        {
+          "command": "trailing-spaces-pro.toggleAutoTrim",
+          "group": "3_toggle@2"
+        }
+      ],
+      "commandPalette": [
+        { "command": "trailing-spaces-pro.deleteAll" },
+        { "command": "trailing-spaces-pro.deleteInSelection" },
+        { "command": "trailing-spaces-pro.deleteOnCurrentLine" },
+        { "command": "trailing-spaces-pro.toggleHighlight" },
+        { "command": "trailing-spaces-pro.toggleAutoTrim" },
+        { "command": "trailing-spaces-pro.highlightAll" },
+        { "command": "trailing-spaces-pro.jumpToNext" },
+        { "command": "trailing-spaces-pro.jumpToPrevious" }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "trailing-spaces-pro.deleteAll",
+        "key": "ctrl+shift+alt+d",
+        "mac": "cmd+shift+alt+d",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "trailing-spaces-pro.deleteInSelection",
+        "key": "ctrl+shift+alt+s",
+        "mac": "cmd+shift+alt+s",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "trailing-spaces-pro.toggleHighlight",
+        "key": "ctrl+shift+alt+h",
+        "mac": "cmd+shift+alt+h",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "trailing-spaces-pro.jumpToNext",
+        "key": "ctrl+shift+alt+n",
+        "mac": "cmd+shift+alt+n",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "trailing-spaces-pro.jumpToPrevious",
+        "key": "ctrl+shift+alt+p",
+        "mac": "cmd+shift+alt+p",
+        "when": "editorTextFocus"
+      }
+    ],
+    "configuration": {
+      "title": "Trailing Spaces Pro",
+      "properties": {
+        "trailingSpaces.highlightColor": {
+          "type": "string",
+          "default": "rgba(255, 0, 127, 0.3)",
+          "description": "Background color for trailing spaces (supports rgba). Only used when colorPreset is set to 'custom'."
+        },
+        "trailingSpaces.borderColor": {
+          "type": "string",
+          "default": "rgba(255, 0, 127, 0.8)",
+          "description": "Border color for trailing spaces. Only used when colorPreset is set to 'custom'."
+        },
+        "trailingSpaces.borderWidth": {
+          "type": "string",
+          "default": "1px",
+          "description": "Border width for trailing space decoration (e.g., '1px', '2px')."
+        },
+        "trailingSpaces.borderStyle": {
+          "type": "string",
+          "default": "solid",
+          "enum": ["solid", "dashed", "dotted", "double", "none"],
+          "description": "Border style for trailing space decoration."
+        },
+        "trailingSpaces.borderRadius": {
+          "type": "string",
+          "default": "2px",
+          "description": "Border radius for trailing space decoration (e.g., '2px', '4px')."
+        },
+        "trailingSpaces.colorPreset": {
+          "type": "string",
+          "default": "neon-pink",
+          "enum": [
+            "neon-pink",
+            "neon-red",
+            "neon-orange",
+            "neon-yellow",
+            "neon-green",
+            "neon-blue",
+            "neon-purple",
+            "subtle-gray",
+            "custom"
+          ],
+          "enumDescriptions": [
+            "Hot pink (rgba 255,0,127) — the signature color",
+            "Bright red (rgba 255,50,50) — bold and obvious",
+            "Warm orange (rgba 255,165,0) — warm and visible",
+            "Bright yellow (rgba 255,255,0) — classic warning color",
+            "Lime green (rgba 0,255,100) — nature-inspired accent",
+            "Electric blue (rgba 0,150,255) — cool and calm",
+            "Vivid purple (rgba 180,0,255) — rich and dramatic",
+            "Subtle gray (rgba 128,128,128) — understated, for minimal themes",
+            "Use the custom highlightColor and borderColor settings"
+          ],
+          "description": "Choose a color preset for highlighting trailing spaces."
+        },
+        "trailingSpaces.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable or disable trailing spaces highlighting globally."
+        },
+        "trailingSpaces.trimOnSave": {
+          "type": "boolean",
+          "default": false,
+          "description": "Automatically remove trailing spaces when saving a file."
+        },
+        "trailingSpaces.highlightCurrentLine": {
+          "type": "boolean",
+          "default": false,
+          "description": "Also highlight trailing spaces on the current cursor line. Set to false (default) to prevent flickering while typing."
+        },
+        "trailingSpaces.includeEmptyLines": {
+          "type": "boolean",
+          "default": false,
+          "description": "Highlight whitespace-only lines (lines that contain only spaces or tabs)."
+        },
+        "trailingSpaces.showStatusBarCount": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show the count of lines with trailing spaces in the status bar."
+        },
+        "trailingSpaces.excludeLanguages": {
+          "type": "array",
+          "items": { "type": "string" },
+          "default": ["markdown", "plaintext"],
+          "description": "Language IDs to exclude from trailing space highlighting. Markdown uses trailing spaces for line breaks, so it is excluded by default."
+        },
+        "trailingSpaces.excludeSchemes": {
+          "type": "array",
+          "items": { "type": "string" },
+          "default": ["output", "debug"],
+          "description": "URI schemes to exclude (e.g., 'output' for the Output panel, 'debug' for the Debug Console)."
+        },
+        "trailingSpaces.maxFileLines": {
+          "type": "number",
+          "default": 10000,
+          "description": "Skip highlighting for files with more lines than this value, to preserve performance on large files."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile",
+    "test": "node ./out/test/runTest.js",
+    "lint": "eslint . --ext .ts"
+  },
+  "devDependencies": {
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.10",
+    "@types/vscode": "^1.75.0",
+    "@types/node": "^18.0.0",
+    "@vscode/test-electron": "^2.5.2",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.0.0",
+    "glob": "^7.2.3",
+    "mocha": "^10.8.2",
+    "typescript": "^5.0.0"
+  }
+}

@@ -1,0 +1,15 @@
+.vscode/**
+src/**
+.gitignore
+.eslintrc.json
+tsconfig.json
+**/*.map
+**/*.ts
+!out/**/*.js
+node_modules/**
+*.vsix
+proj3.txt
+run.md
+launch.json
+tasks.json
+.planning/**
