@@ -127,26 +127,6 @@ code --install-extension Misrilal-Sah.trailing-spaces-pro
 
 Once installed, open any file — trailing spaces are highlighted immediately. No configuration needed.
 
-Once installed, open any file — trailing spaces are highlighted immediately. No configuration needed.
-
----
-
-## 🧪 Development Testing
-
-Run everything from terminal (no F5 key required):
-
-```bash
-npm install
-npm run test
-```
-
-This runs compile + VS Code extension integration tests in one command.
-
-If your F5 key does not work on your PC, use one of these:
-
-1. Open **Run and Debug** sidebar and click **Run Extension**.
-2. Use Command Palette: **Debug: Select and Start Debugging** → **Run Extension**.
-3. Run integration tests from terminal with `npm run test`.
 
 ---
 
