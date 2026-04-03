@@ -14,9 +14,6 @@ and never let invisible whitespace sneak into your commits again.</p>
 
 <br/>
 
-[![Version](https://img.shields.io/visual-studio-marketplace/v/Misrilal-Sah.trailing-spaces-pro?style=for-the-badge&color=111111&labelColor=FF007F&label=version)](https://marketplace.visualstudio.com/items?itemName=Misrilal-Sah.trailing-spaces-pro)
-[![Installs](https://img.shields.io/visual-studio-marketplace/i/Misrilal-Sah.trailing-spaces-pro?style=for-the-badge&color=111111&labelColor=FF007F&label=installs)](https://marketplace.visualstudio.com/items?itemName=Misrilal-Sah.trailing-spaces-pro)
-[![Rating](https://img.shields.io/visual-studio-marketplace/r/Misrilal-Sah.trailing-spaces-pro?style=for-the-badge&color=111111&labelColor=FF007F&label=rating)](https://marketplace.visualstudio.com/items?itemName=Misrilal-Sah.trailing-spaces-pro)
 [![License: MIT](https://img.shields.io/badge/license-MIT-111111?style=for-the-badge&labelColor=FF007F)](LICENSE)
 [![GitHub](https://img.shields.io/badge/github-source-111111?style=for-the-badge&labelColor=FF007F&logo=github)](https://github.com/Misrilal-Sah/Trailing-Spaces-Pro)
 
